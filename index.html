@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>A* Visualizer</title>
+    </head>
+    <body>
+        <div align="center">
+            <h1>A* Visualizer</h1>
+            <div id="grid"></div>
+            <script>
+                const grid = document.getElementById('grid');
+                for (let i = 0; i < 640; i++) {
+                    const cell = document.createElement('div');
+                    cell.classList.add('cell');
+                    grid.appendChild(cell);
+                }
+            </script>
+        </div>
+        
+    </body>
+    
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="astar.js"></script>
+</html>
