@@ -1,23 +1,36 @@
-<html>
-    <head>
-        <title>A* Visualizer</title>
-    </head>
-    <body>
-        <div align="center">
-            <h1>A* Visualizer</h1>
-            <div id="grid"></div>
-            <script>
-                const grid = document.getElementById('grid');
-                for (let i = 0; i < 640; i++) {
-                    const cell = document.createElement('div');
-                    cell.classList.add('cell');
-                    grid.appendChild(cell);
-                }
-            </script>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A* Visualizer by Josh Jaworowski</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>A* Pathfinding Visualizer</h1>
         
-    </body>
-    
-    <link rel="stylesheet" type="text/css" href="index.css">
+        <div class="controls">
+            <button id="startBtn">Set Start</button>
+            <button id="goalBtn">Set Goal</button>
+            <button id="obstacleBtn">Draw Obstacles</button>
+            <button id="clearBtn">Clear Grid</button>
+            <button id="runBtn">Run A*</button>
+            <button id="stepBtn">Step</button>
+            <button id="resetBtn">Reset Path</button>
+        </div>
+
+        <div id="grid"></div>
+
+        <div class="info">
+            <p>Click cells to paint based on selected mode. <span id="status"></span></p>
+        </div>
+    </div>
+
     <script src="astar.js"></script>
+</body>
+<footer>
+    <p>Created by Josh Jaworowski</p>
+    <a href="github.com/yoshi-isle">Check out my GitHub</a>
+</footer>
 </html>

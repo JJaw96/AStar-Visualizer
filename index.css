@@ -1,24 +1,90 @@
-html, body {
-    background-color: black;
-    color: white;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141414;
+    color: #cfcfcf;
+    font-family: system-ui, -apple-system, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.controls {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+button {
+    padding: 8px 16px;
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+button.active {
+    background: #0a84ff;
+    border-color: #0a84ff;
 }
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(32, 20px);
-    grid-template-rows: repeat(32, 20px);
+    grid-template-columns: repeat(32, 22px);
+    grid-template-rows: repeat(32, 22px);
+    gap: 1px;
+    background: #222;
+    padding: 1px;
+    margin: 20px auto;
+    width: fit-content;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .cell {
-    width: 20px;
-    height: 20px;
-    border: 1px solid #555;
-    box-sizing: border-box;
-    background-color: black;
+    width: 22px;
+    height: 22px;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    border: 1px solid #333;
 }
 
-.cell.black {
-    background-color: white;
+.cell.start { background-color: #22c55e; }
+.cell.goal { background-color: #ef4444; }
+.cell.obstacle { background-color: #64748b; }
+.cell.open { background-color: #3b82f6; animation: openAnim 0.7s; }
+.cell.closed { background-color: #6366f1; }
+.cell.path { background-color: #eab308; animation: pathAnim 0.8s; }
+
+@keyframes openAnim {
+    0% { transform: scale(0.3); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pathAnim {
+    0% { transform: scale(0.4); }
+    100% { transform: scale(1); }
+}
+
+.info {
+    margin-top: 10px;
+    font-size: 0.95em;
+    opacity: 0.8;
 }
